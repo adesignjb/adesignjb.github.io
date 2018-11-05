@@ -34,15 +34,15 @@ module('liblogging'); //for verbosity functionality
 
 //Configures the maximum supported operating system version or safari version
 var MAX_SUPPORT = {
-    os: 12.01,
-    safari: 604.1
+    os: 12.0.1,
+    safari: 605.1
 };
 
 //prints out specifications of a detected device
 function print_specifications() {
    var device = current_device();
    puts('<b>'+device.ProductName+'</b>');
-   puts('<b>OS: </b>'+device.OSVersion);
+   puts('<b>iOS: </b>'+device.OSVersion);
    puts('<b>Build: </b>'+device.Build);
    puts('<b>Webkit version: </b>'+device.Browser.webkit_vers);
    puts('<b>DID: </b><br>'+device.identifier);
@@ -187,7 +187,7 @@ function strategy_select() {
         //Sanity check to only start the strategy when the exploit supports the client's device
         if(supported) {
             
-            puts('Chose Niklas B\'s jailbreakme');
+            puts('Chose  jailbreakme');
             include('libsploit.ios.1131'); //include the strategy module
             start_strategy('wk113go'); //schedule the strategy for launch
             return true;
@@ -197,7 +197,7 @@ function strategy_select() {
             return false;
         }
     }
-    else if(osversion_between(12.0, 12.01)){
+    else if(osversion_between(12.0, 12.0.1)){
 
          //We firstly need to check if the client's device model is of one that this strategy supports
         var supported_devices = ["iPhone X", "iPhone 8", "iPhone 8+", "iPhone 6S", "iPhone 6+", "iPhone 5S"];
